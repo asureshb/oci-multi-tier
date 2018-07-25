@@ -12,9 +12,9 @@ To complete the Bitnami Multi-Tier deployment it is necessary to have the Terraf
 
 ## Terraform templates for OCI
 
-- [MySQL with Replication](https://github.com/oci-multi-tier/tree/master/mysql)
-- [MongoDB with Replication](https://github.com/oci-multi-tier/tree/master/mongodb)
-- [RabbitMQ Cluster](https://github.com/oci-multi-tier/tree/master/rabbitmq)
+- [MySQL with Replication](https://github.com/bitnami/oci-multi-tier/tree/master/mysql)
+- [MongoDB with Replication](https://github.com/bitnami/oci-multi-tier/tree/master/mongodb)
+- [RabbitMQ Cluster](https://github.com/bitnami/oci-multi-tier/tree/master/rabbitmq)
 
 ## Maintenance & support
 
