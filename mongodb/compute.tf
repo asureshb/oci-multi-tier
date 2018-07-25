@@ -57,8 +57,9 @@ resource "null_resource" "waiter" {
   # Wait for the instances to be ready
   provisioner "remote-exec" {
     inline = [
-      "timeout 20m sh -c 'while [ ! -f /opt/bitnami/.firstboot.status ]; do sleep 2s; done' || exit 1",
-      "test $(cat /opt/bitnami/.firstboot.status) = true || exit 1",
+      "timeout 20m sh -c 'while [ ! -f /opt/bitnami/.firstboot.status ]; do sleep 10s; echo Still initializing the node...; done'",
+      "test x$(cat /opt/bitnami/.firstboot.status) = xfalse && echo 'The node failed to initialize.' && exit 1",
+      "test x$(cat /opt/bitnami/.firstboot.status) = xtrue || echo 'Timeout initializing the node, it is still starting up...'",
     ]
   }
 }

@@ -95,3 +95,8 @@ Then, execute the MongoDB client:
 ```bash
 mongo admin --username root -p <application_password>
 ```
+
+## Maintenance & support
+
+Bitnami provides technical support for installation and setup issues through
+[our support center](https://bitnami.com/support/oci).
