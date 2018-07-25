@@ -5,19 +5,26 @@ the master node to a configurable number of replicas.
 
 ## Using this solution
 
-- Install Terraform and Terraform provider for OCI. See
-  [Installation](https://github.com/oracle/terraform-provider-oci#installation)
-  for instructions.
+The [Get Started Guide with Bitnami Terraform Templates on OCI](https://docs.bitnami.com/oci/get-started-oci-terraform/)
+walks you though the process of using the Terraform Provider plugin and the
+Terraform CLI to deploy the Bitnami MySQL with replication on an Oracle
+Cloud Infrastructure server. You will find there how to configure the
+Terraform CLI, the OCI plugin and how to configure it with your OCI account.
 
-- Update the `terraform.tfvars` file with the OCI credentials.
+# TL;DR;
 
-- Initialize the Terraform working directory.
+```bash
+terraform init
+terraform apply
+```
+
+## Initialize the working directory
 
 ```bash
 terraform init
 ```
 
-- Deploy the cluster. You will be prompted to specify some information such as:
+You will be prompted to specify some information such as:
   - Name of the deployment.
   - Number of nodes to deploy.
   - Size of the instances.
@@ -27,11 +34,13 @@ terraform init
   If you don't want to be prompted for those values, add them in the
   `terraform.tfvars` file.
 
+## Deploy the cluster
+
 ```bash
 terraform apply
 ```
 
-- Wait until the deployment is ready. It can take up to 15 minutes to finish.
+Wait until the deployment is ready. It can take up to 15 minutes to finish.
   Then, you will see the Output section of the deployment which contains:
   - Application password (hidden).
   - Instance names.
