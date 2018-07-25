@@ -1,0 +1,105 @@
+# Bitnami RabbitMQ Cluster
+
+This solution uses multiple instances on OCI to provision a cluster that
+functions as a single logical broker.
+
+## Using this solution
+
+The [Get Started Guide with Bitnami Terraform Templates on OCI](https://docs.bitnami.com/oci/get-started-oci-terraform/)
+walks you though the process of using the Terraform Provider plugin and the
+Terraform CLI to deploy the Bitnami MySQL with replication on an Oracle
+Cloud Infrastructure server. You will find there how to configure the
+Terraform CLI, the OCI plugin and how to configure it with your OCI account.
+
+# TL;DR;
+
+```bash
+terraform init
+terraform apply
+```
+
+## Initialize the working directory
+
+```bash
+terraform init
+```
+
+You will be prompted to specify some information such as:
+  - Name of the deployment.
+  - Number of nodes to deploy.
+  - Size of the instances.
+  - Size of the data volume in GBs.
+
+  If you don't want to be prompted for those values, add them in the
+  `terraform.tfvars` file.
+
+## Deploy the cluster
+
+```bash
+terraform apply
+```
+
+Wait until the deployment is ready. It can take up to 15 minutes to finish.
+Then, you will see the Output section of the deployment which contains:
+  - Application password (hidden).
+  - Instance names.
+  - Oracle Linux base image.
+  - Private IPs.
+  - Public IPs.
+
+## How to scale the cluster
+
+To change the number of nodes in your cluster, execute the "apply" command
+changing the number of nodes of the deployment:
+
+```bash
+terraform apply -var nodes_count=<number_of_nodes>
+```
+
+## How to upgrade the instances
+
+You can execute the "apply" command. If a new Oracle Linux 7.5 base image is
+detected, the instances are destroyed and relaunched. All the data of the
+application is persisted in a different volume that is reattached so there is
+no data loss.
+
+```bash
+terraform apply
+```
+
+## How to delete the cluster
+
+You can delete the cluster by executing the "destroy" command.
+
+```bash
+terraform destroy
+```
+
+## How to get the application password
+
+The output `ApplicationPassword` is the password for RabbitMQ user 'user'. If the
+password is not provided, it is auto-generated. The password is marked
+as sensitive information. If you want to show it, execute the following
+command:
+
+```bash
+terraform output ApplicationPassword
+```
+
+## How to check cluster status?
+
+To check the status of your RabbitMQ cluster, log in to the master
+server host through SSH, execute the RabbitMQ command line client with
+the `cluster_status` parameter, like this:
+
+```bash
+sudo rabbitmqctl cluster_status
+```
+
+The output of this command will be a list of cluster nodes and their current
+status.
+
+## Maintenance & support
+
+Bitnami provides technical support for installation and setup issues through
+[our support center](https://bitnami.com/support/oci).
