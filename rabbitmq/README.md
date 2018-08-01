@@ -24,19 +24,31 @@ terraform apply
 terraform init
 ```
 
-You will be prompted to specify some information such as:
-  - Name of the deployment.
-  - Number of nodes to deploy.
-  - Size of the instances.
-  - Size of the data volume in GBs.
+Replace the [OCI account parameters](https://docs.bitnami.com/oci/get-started-oci-terraform/#retrieving-oci-account-parameters)
+in the `env-vars` file. Source it before you plan, apply, or destroy the
+configuration:
 
-  If you don't want to be prompted for those values, add them in the
-  `terraform.tfvars` file.
+```bash
+. env-vars
+```
 
 ## Deploy the cluster
 
 ```bash
 terraform apply
+```
+
+You can modify some default values of the deployment such as:
+  - Name of the deployment.
+  - Number of nodes to deploy.
+  - Size of the instances.
+  - Size of the data volume in GBs.
+
+For instance, to use a custom name for the deployment add the following line
+to the `env-vars` file:
+
+```bash
+export TF_VAR_deployment_short_name="a_name"
 ```
 
 Wait until the deployment is ready. It can take up to 15 minutes to finish.

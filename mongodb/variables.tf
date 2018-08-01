@@ -5,6 +5,7 @@ locals {
 
 variable "deployment_short_name" {
   description = "Name of the deployment, short way. (e.g. mydeployment)."
+  default     = "mydeployment"
 }
 
 # Settings for authentication
@@ -46,22 +47,27 @@ variable "availability_domain" {
 # Compute
 variable "nodes_count" {
   description = "Number of instances to deploy. (Minimum recommended: 3)."
+  default     = "3"
 }
 
 variable "instance_shape" {
   description = "Size of each instance. (Minimum recommended: VM.Standard1.1)."
+  default     = "VM.Standard1.1"
 }
 
 variable "volume_size" {
   description = "Size of the data volume in GBs. (Minimum recommended: 50)."
+  default     = "50"
 }
 
 variable "arbiters_count" {
   description = "Number of arbiters to deploy. Add add an arbiter to create an odd number of total nodes. (Choose 0 or 1)."
+  default     = "0"
 }
 
 variable "arbiters_instance_shape" {
   description = "Size of each arbiter instance. (Minimum recommended: VM.Standard1.1)."
+  default     = "VM.Standard1.1"
 }
 
 variable "app_password" {
@@ -71,6 +77,7 @@ variable "app_password" {
 
 variable "app_database" {
   description = "Name of the application database. (e.g. replicaset)."
+  default     = "replicaset"
 }
 
 variable "bundle_tgz_uri" {
