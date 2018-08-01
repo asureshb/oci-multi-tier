@@ -6,7 +6,7 @@ locals {
 
 data "oci_core_images" "OL75Image" {
   # Oracle Linux 7.5 images
-  compartment_id           = "${var.tenancy_ocid}"
+  compartment_id           = "${var.compartment_ocid}"
   shape                    = "${var.instance_shape}"
   operating_system         = "Oracle Linux"
   operating_system_version = "7.5"
