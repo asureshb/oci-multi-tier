@@ -1,6 +1,6 @@
 locals {
   application = "mongodb"
-  version     = "4.0.1-1"
+  version     = "4.0.2-0"
 }
 
 variable "deployment_short_name" {
