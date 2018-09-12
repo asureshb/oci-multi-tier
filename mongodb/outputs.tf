@@ -7,15 +7,11 @@ output "InstanceNames" {
   value = ["${oci_core_instance.instance.*.display_name}"]
 }
 
-output "OracleLinuxImage" {
-  value = "${lookup(data.oci_core_images.OL75Image.images[0], "display_name")}"
-}
-
-output "PrivateIPs" {
-  value = ["${oci_core_instance.instance.*.private_ip}"]
-}
-
 # Outputs
 output "PublicIPs" {
   value = ["${oci_core_instance.instance.*.public_ip}"]
+}
+
+output "ApplicationStatus" {
+  value = ["${var.ssh_private_key_path} == '' ? 'Your application is being deployed. Wait a few minutes until it finishes.' : 'Your application is already deployed. You can already access!'"]
 }
