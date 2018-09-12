@@ -91,7 +91,7 @@ variable "custom_userdata" {
 
 variable "ssh_public_key_path" {
   description = "Path to the public key used on the instances."
-  default     = "~/.ssh/id_rsa.pub"
+  default     = ""
 }
 
 variable "ssh_public_key" {
@@ -101,7 +101,7 @@ variable "ssh_public_key" {
 
 variable "ssh_private_key_path" {
   description = "Path to the private key used on the instances."
-  default     = "~/.ssh/id_rsa"
+  default     = ""
 }
 
 locals {
