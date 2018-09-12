@@ -1,6 +1,6 @@
 locals {
   application = "mongodb"
-  version     = "4.0.2-0"
+  version     = "4.0.2-3"
 }
 
 variable "deployment_short_name" {
@@ -37,6 +37,7 @@ variable "compartment_ocid" {
 
 variable "region" {
   description = "Region to use."
+  default     = "us-ashburn-1"
 }
 
 variable "availability_domain" {
@@ -103,7 +104,17 @@ variable "ssh_public_key_path" {
   default     = "~/.ssh/id_rsa.pub"
 }
 
+variable "ssh_public_key" {
+  description = "Contents of the public key used on the instances. If this variable is set, ssh_public_key_path is ignored."
+  default     = ""
+}
+
 variable "ssh_private_key_path" {
   description = "Path to the private key used on the instances."
   default     = "~/.ssh/id_rsa"
 }
+
+locals {
+  ssh_public_key = "${ var.ssh_public_key == "" ? file(var.ssh_public_key == "" ? var.ssh_public_key_path : "/dev/null") : var.ssh_public_key }"
+}
+

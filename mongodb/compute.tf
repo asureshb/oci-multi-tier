@@ -35,13 +35,13 @@ resource "oci_core_instance" "instance" {
   }
 
   metadata {
-    ssh_authorized_keys = "${file(var.ssh_public_key_path)}"
+    ssh_authorized_keys = "${local.ssh_public_key}"
     user_data           = "${base64encode(data.template_file.userdata.*.rendered[count.index])}"
   }
 }
 
 resource "null_resource" "waiter" {
-  count = "${var.nodes_count + var.arbiters_count}"
+  count = "${var.ssh_private_key_path == "" ? 0 : var.nodes_count + var.arbiters_count}"
 
   triggers {
     instance_ids = "${oci_core_instance.instance.*.id[count.index]}"
