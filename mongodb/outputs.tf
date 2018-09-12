@@ -13,5 +13,5 @@ output "PublicIPs" {
 }
 
 output "ApplicationStatus" {
-  value = ["${var.ssh_private_key_path} == '' ? 'Your application is being deployed. Wait a few minutes until it finishes.' : 'Your application is already deployed. You can already access!'"]
+  value = "${ var.ssh_private_key_path == "" ? "Your application is being deployed. Wait a few minutes until it finishes." : "Your application is already deployed. You can already access!" }"
 }
