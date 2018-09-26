@@ -1,4 +1,4 @@
-# Bitnami SonarQube Multi-Tier
+# Bitnami SonarQube Certified by Bitnami
 
 This solution uses two virtual machines, one with the application front-end and
 a second with the database.
