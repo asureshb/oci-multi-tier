@@ -1,6 +1,6 @@
 locals {
   application = "jenkins"
-  version     = "2.121.3-0"
+  version     = "2.138.1-2"
 }
 
 variable "deployment_short_name" {
@@ -102,4 +102,3 @@ variable "ssh_private_key_path" {
 locals {
   ssh_public_key = "${ var.ssh_public_key == "" ? file(var.ssh_public_key == "" ? var.ssh_public_key_path : "/dev/null") : var.ssh_public_key }"
 }
-
