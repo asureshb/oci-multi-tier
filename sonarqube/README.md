@@ -97,7 +97,6 @@ command:
 
 ```bash
 terraform output DatabasePassword
-```
 
 ## How to access the SonarQube application?
 
