@@ -1,6 +1,6 @@
 locals {
   application = "mysql"
-  version     = "5.7.23-3"
+  version     = "5.7.23-4"
 }
 
 variable "deployment_short_name" {
@@ -91,7 +91,7 @@ variable "custom_userdata" {
 
 variable "ssh_public_key_path" {
   description = "Path to the public key used on the instances."
-  default     = "~/.ssh/id_rsa.pub"
+  default     = ""
 }
 
 variable "ssh_public_key" {
@@ -101,10 +101,9 @@ variable "ssh_public_key" {
 
 variable "ssh_private_key_path" {
   description = "Path to the private key used on the instances."
-  default     = "~/.ssh/id_rsa"
+  default     = ""
 }
 
 locals {
   ssh_public_key = "${ var.ssh_public_key == "" ? file(var.ssh_public_key == "" ? var.ssh_public_key_path : "/dev/null") : var.ssh_public_key }"
 }
-
