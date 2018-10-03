@@ -76,7 +76,7 @@ data "template_file" "userdata" {
     custom_userdata = "${var.custom_userdata}"
 
     provisioner_shared_unique_id_input = "${oci_core_subnet.Subnet.id}${var.deployment_short_name}"
-    provisioner_peer_nodes_count       = "${var.nodes_count}"
+    provisioner_peer_nodes_count       = "${var.nodes_count + var.arbiters_count}"
     provisioner_peer_nodes_index       = "${count.index}"
     provisioner_peer_nodes_prefix      = "${local.hostname_prefix}"
     provisioner_tier                   = "${count.index == 0 ? "master" : count.index >= var.nodes_count ? "arbiter" : "slave"}"

@@ -1,6 +1,6 @@
 locals {
   application = "mongodb"
-  version     = "4.0.2-4"
+  version     = "4.0.3-0"
 }
 
 variable "deployment_short_name" {
@@ -117,4 +117,3 @@ variable "ssh_private_key_path" {
 locals {
   ssh_public_key = "${ var.ssh_public_key == "" ? file(var.ssh_public_key == "" ? var.ssh_public_key_path : "/dev/null") : var.ssh_public_key }"
 }
-
