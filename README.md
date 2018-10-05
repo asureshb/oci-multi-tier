@@ -10,7 +10,7 @@ To complete the Bitnami Multi-Tier deployment it is necessary to have the Terraf
 
 [The Get started guide with Bitnami Terraform Templates on OCI](https://docs.bitnami.com/oci/get-started-oci-terraform/) walks you though the process of using the Terraform Provider plugin and the Terraform CLI to deploy the Bitnami MySQL with replication on an Oracle Cloud Infrastructure server. You will find there how to configure the Terraform CLI, the OCI plugin and how to configure it with your OCI account.
 
-[![Alt text](https://img.youtube.com/vi/fv8PhTmDDH8/0.jpg)](https://www.youtube.com/watch?v=fv8PhTmDDH8)
+[![Alt text](https://img.youtube.com/vi/rwUT4w2JQvA/0.jpg)](https://www.youtube.com/watch?v=rwUT4w2JQvA)
 
 ## Maintenance & support
 
