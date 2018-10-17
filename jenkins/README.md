@@ -5,7 +5,7 @@ distribute workloads out to a configurable number of build slaves.
 
 ## Using this solution
 
-The [Get Started Guide with Bitnami Terraform Templates on OCI](https://docs.bitnami.com/oci/get-started-oci-terraform/)
+The [Get Started Guide with Bitnami Terraform Templates on OCI](https://docs.bitnami.com/oci-templates/get-started-oci-terraform/)
 walks you though the process of using the Terraform Provider plugin and the
 Terraform CLI to deploy the Bitnami MySQL with replication on an Oracle
 Cloud Infrastructure server. You will find there how to configure the
@@ -24,7 +24,7 @@ terraform apply
 terraform init
 ```
 
-Replace the [OCI account parameters](https://docs.bitnami.com/oci/get-started-oci-terraform/#retrieving-oci-account-parameters)
+Replace the [OCI account parameters](https://docs.bitnami.com/oci-templates/get-started-oci-terraform/#retrieving-oci-account-parameters)
 in the `env-vars` file. Source it before you plan, apply, or destroy the
 configuration:
 
