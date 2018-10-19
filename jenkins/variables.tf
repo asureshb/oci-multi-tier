@@ -1,6 +1,6 @@
 locals {
   application = "jenkins"
-  version     = "2.138.1-4"
+  version     = "2.138.2-1"
 }
 
 variable "deployment_short_name" {
