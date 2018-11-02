@@ -83,7 +83,7 @@ data "template_file" "userdata" {
     provisioner_app_password           = "${local.app_password}"
     provisioner_app_database           = "${var.app_database}"
     provisioner_peer_password          = "${random_string.peer_password.result}"
-    provisioner_peer_address           = "${local.hostname_prefix}0"
+    provisioner_peer_address           = "${local.hostname_prefix}0.${oci_core_subnet.Subnet.dns_label}.${oci_core_virtual_network.VCN.dns_label}.oraclevcn.com"
   }
 }
 
