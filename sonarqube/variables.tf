@@ -1,6 +1,6 @@
 locals {
   application = "sonarqube"
-  version     = "7.3.0-3-r51"
+  version     = "7.4.0-0"
 }
 
 variable "deployment_short_name" {
