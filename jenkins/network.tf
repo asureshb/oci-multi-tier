@@ -10,7 +10,7 @@ locals {
 resource "oci_core_virtual_network" "VCN" {
   compartment_id = "${var.compartment_ocid}"
   display_name   = "${var.deployment_short_name}_VCN"
-  dns_label      = "${var.deployment_short_name}"
+  dns_label      = "vcn"
   cidr_block     = "10.0.0.0/16"
 }
 
