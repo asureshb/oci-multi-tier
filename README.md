@@ -18,7 +18,7 @@ Bitnami provides technical support for installation and setup issues through [ou
 
 # License
 
-Copyright (c) 2018 Bitnami
+Copyright (c) 2019 Bitnami
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
