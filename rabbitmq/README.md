@@ -70,7 +70,7 @@ terraform apply -var nodes_count=<number_of_nodes>
 
 ## How to upgrade the instances
 
-You can execute the "apply" command. If a new Oracle Linux 7.5 base image is
+You can execute the "apply" command. If a new Oracle Linux 7.6 base image is
 detected, the instances are destroyed and relaunched. All the data of the
 application is persisted in a different volume that is reattached so there is
 no data loss.
