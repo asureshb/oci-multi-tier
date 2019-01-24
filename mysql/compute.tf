@@ -4,12 +4,12 @@ locals {
   hostname_prefix = "${var.deployment_short_name}-${local.application}"
 }
 
-data "oci_core_images" "OL75Image" {
-  # Oracle Linux 7.5 images
+data "oci_core_images" "OLImage" {
+  # Oracle Linux 7.6 images
   compartment_id           = "${var.compartment_ocid}"
   shape                    = "${var.instance_shape}"
   operating_system         = "Oracle Linux"
-  operating_system_version = "7.5"
+  operating_system_version = "7.6"
 }
 
 resource "oci_core_instance" "instance" {
@@ -24,7 +24,7 @@ resource "oci_core_instance" "instance" {
 
   source_details {
     source_type = "image"
-    source_id   = "${lookup(data.oci_core_images.OL75Image.images[0], "id")}"
+    source_id   = "${lookup(data.oci_core_images.OLImage.images[0], "id")}"
   }
 
   create_vnic_details {

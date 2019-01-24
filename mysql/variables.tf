@@ -1,6 +1,6 @@
 locals {
   application = "mysql"
-  version     = "5.7.25-0"
+  version     = "5.7.25-0-r01"
 }
 
 variable "deployment_short_name" {
