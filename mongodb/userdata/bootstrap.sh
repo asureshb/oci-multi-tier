@@ -33,6 +33,7 @@ ${custom_userdata}
   --instance-tier "${provisioner_tier}" \
   --peer-address "${provisioner_peer_address}" \
   --app-database "${provisioner_app_database}" \
+  --boolean-input "${provisioner_boolean_input}" \
   --perform-provisioning firstboot 2>&1 | tee -a $LOGFILE
 
 if [ "$(cat $STATUSFILE)" = "true" ] ; then
