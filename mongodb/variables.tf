@@ -1,6 +1,6 @@
 locals {
   application = "mongodb"
-  version     = "4.0.6-1"
+  version     = "4.0.6-1-r07"
 }
 
 variable "deployment_short_name" {
@@ -62,7 +62,7 @@ variable "volume_size" {
 }
 
 variable "arbiters_count" {
-  description = "Number of arbiters to deploy. Add add an arbiter to create an odd number of total nodes. (Choose 0 or 1)."
+  description = "Number of arbiters to deploy. Add an arbiter to create an odd number of total nodes. (Choose 0 or 1)."
   default     = "0"
 }
 
