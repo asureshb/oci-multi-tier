@@ -81,7 +81,7 @@ data "template_file" "userdata" {
     provisioner_peer_nodes_prefix      = "${local.hostname_prefix}"
     provisioner_tier                   = "${count.index == 0 ? "frontend" : "database"}"
     provisioner_app_password           = "${local.app_password}"
-    provisioner_peer_password          = "${random_string.peer_password.result}"
+    provisioner_peer_password          = "${local.peer_password}"
     provisioner_peer_address           = "${local.hostname_prefix}1.${oci_core_subnet.Subnet.dns_label}.${oci_core_virtual_network.VCN.dns_label}.oraclevcn.com"
   }
 }

@@ -3,7 +3,7 @@ output "ApplicationUser" {
 }
 
 output "ApplicationPassword" {
-  value     = "${local.app_password}"
+  value     = "${ var.app_password == "" ? local.app_password : "Password provided as input" }"
   sensitive = true
 }
 
@@ -12,7 +12,7 @@ output "DatabaseUser" {
 }
 
 output "DatabasePassword" {
-  value     = "${local.peer_password}"
+  value     = "${ var.database_password == "" ? local.peer_password : "Password provided as input" }"
   sensitive = true
 }
 
