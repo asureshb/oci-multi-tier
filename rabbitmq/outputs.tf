@@ -3,7 +3,7 @@ output "ApplicationUser" {
 }
 
 output "ApplicationPassword" {
-  value     = "${local.app_password}"
+  value     = "${ var.app_password == "" ? local.app_password : "Password provided as input" }"
   sensitive = true
 }
 

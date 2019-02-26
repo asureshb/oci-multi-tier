@@ -1,6 +1,6 @@
 locals {
   application = "rabbitmq"
-  version     = "3.7.12-0-r06"
+  version     = "3.7.12-0-r08"
 }
 
 variable "deployment_short_name" {
@@ -52,8 +52,8 @@ variable "nodes_count" {
 }
 
 variable "instance_shape" {
-  description = "Size of each instance. (Minimum recommended: VM.Standard1.1)."
-  default     = "VM.Standard1.1"
+  description = "Size of each instance. (Minimum recommended: VM.Standard2.1)."
+  default     = "VM.Standard2.1"
 }
 
 variable "volume_size" {
