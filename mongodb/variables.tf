@@ -1,6 +1,6 @@
 locals {
   application = "mongodb"
-  version     = "4.0.6-1-r07"
+  version     = "4.0.6-1-r08"
 }
 
 variable "deployment_short_name" {
@@ -52,8 +52,8 @@ variable "nodes_count" {
 }
 
 variable "instance_shape" {
-  description = "Size of each instance. (Minimum recommended: VM.Standard1.1)."
-  default     = "VM.Standard1.1"
+  description = "Size of each instance. (Minimum recommended: VM.Standard2.1)."
+  default     = "VM.Standard2.1"
 }
 
 variable "volume_size" {
@@ -67,8 +67,8 @@ variable "arbiters_count" {
 }
 
 variable "arbiters_instance_shape" {
-  description = "Size of each arbiter instance. (Minimum recommended: VM.Standard1.1)."
-  default     = "VM.Standard1.1"
+  description = "Size of each arbiter instance. (Minimum recommended: VM.Standard2.1)."
+  default     = "VM.Standard2.1"
 }
 
 variable "app_password" {
