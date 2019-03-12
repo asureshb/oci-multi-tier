@@ -35,13 +35,18 @@ resource "oci_core_instance" "instance" {
   }
 
   metadata {
-    ssh_authorized_keys = "${local.ssh_public_key}"
+    ssh_authorized_keys = "${trimspace(local.ssh_public_key)}\n${trimspace(tls_private_key.public_private_key_pair.public_key_openssh)}" # TODO Improve a little bit more?
     user_data           = "${base64encode(data.template_file.userdata.*.rendered[count.index])}"
   }
 }
 
+# Waiter
+resource "tls_private_key" "public_private_key_pair" {
+  algorithm = "RSA"
+}
+
 resource "null_resource" "waiter" {
-  count = "${var.ssh_private_key_path == "" ? 0 : var.nodes_count}"
+  count = "${var.nodes_count}"
 
   triggers {
     instance_ids = "${oci_core_instance.instance.*.id[count.index]}"
@@ -50,7 +55,7 @@ resource "null_resource" "waiter" {
   connection {
     host        = "${oci_core_instance.instance.*.public_ip[count.index]}"
     user        = "bitnami"
-    private_key = "${file(var.ssh_private_key_path)}"
+    private_key = "${tls_private_key.public_private_key_pair.private_key_pem}"
     timeout     = "20m"
   }
 
