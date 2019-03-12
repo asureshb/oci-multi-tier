@@ -1,6 +1,6 @@
 locals {
   application = "jenkins"
-  version     = "2.150.3-0-r09"
+  version     = "2.150.3-0-r10"
 }
 
 variable "deployment_short_name" {
@@ -91,11 +91,6 @@ variable "ssh_public_key_path" {
 
 variable "ssh_public_key" {
   description = "Contents of the public key used on the instances. If this variable is set, ssh_public_key_path is ignored."
-  default     = ""
-}
-
-variable "ssh_private_key_path" {
-  description = "Path to the private key used on the instances."
   default     = ""
 }
 
