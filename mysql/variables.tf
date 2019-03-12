@@ -1,6 +1,6 @@
 locals {
   application = "mysql"
-  version     = "5.7.25-0-r08"
+  version     = "5.7.25-0-r10"
 }
 
 variable "deployment_short_name" {
@@ -96,11 +96,6 @@ variable "ssh_public_key_path" {
 
 variable "ssh_public_key" {
   description = "Contents of the public key used on the instances. If this variable is set, ssh_public_key_path is ignored."
-  default     = ""
-}
-
-variable "ssh_private_key_path" {
-  description = "Path to the private key used on the instances."
   default     = ""
 }
 
