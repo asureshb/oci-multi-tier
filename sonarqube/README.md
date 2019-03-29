@@ -1,7 +1,7 @@
 # Bitnami SonarQube Multi-Tier
 
 This solution uses two virtual machines, one with the application front-end and
-a second with the database.
+another with the database.
 
 ## Using this solution
 
