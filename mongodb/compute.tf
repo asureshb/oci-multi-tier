@@ -35,7 +35,7 @@ resource "oci_core_instance" "instance" {
   }
 
   metadata {
-    ssh_authorized_keys = "${trimspace(local.ssh_public_key)}\n${trimspace(tls_private_key.public_private_key_pair.public_key_openssh)}" # TODO Improve a little bit more?
+    ssh_authorized_keys = "${trimspace(local.ssh_public_key)}\n${trimspace(tls_private_key.public_private_key_pair.public_key_openssh)}"
     user_data           = "${base64encode(data.template_file.userdata.*.rendered[count.index])}"
   }
 }
