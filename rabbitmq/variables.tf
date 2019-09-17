@@ -1,6 +1,6 @@
 locals {
   application = "rabbitmq"
-  version     = "3.7.17-1-r01"
+  version     = "3.7.18-0"
 }
 
 variable "deployment_short_name" {
